@@ -1,5 +1,5 @@
 ## DevTools Configuration
-
+- run pnpm start
 - go to network tab
 - check the 'disable cache' checkbox
 - write vite in the filter input field
