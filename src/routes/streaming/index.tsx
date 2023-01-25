@@ -12,8 +12,6 @@ export function delay(time: number) {
   });
 }
 
-
-
 export default component$(() => {
   return (
     <div>
@@ -41,7 +39,7 @@ export const Cmp = component$((props: { text: string; delay: number }) => {
   }`);
 
   const resource = useResource$<string>(async ({ track }) => {
-    track(props, "text");
+    track(() => props.text);
     await delay(props.delay);
     return props.text;
   });

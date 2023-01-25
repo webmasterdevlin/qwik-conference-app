@@ -7,7 +7,7 @@ export default component$(() => {
   const loc = useLocation();
 
   const user = useResource$<IUser>(async ({ track }) => {
-    const params = track(loc, "params");
+    const params = track(() => loc.params);
     const { id } = params;
     return await getUser(parseInt(id, 10));
   });

@@ -8,7 +8,7 @@ export default component$(() => {
   const loc = useLocation();
 
   const story = useResource$<IStory>(async ({ track }) => {
-    const params = track(loc, "params");
+    const params = track(() => loc.params);
     const { id } = params;
     return await getStory(parseInt(id, 10));
   });

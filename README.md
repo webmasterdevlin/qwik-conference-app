@@ -1,3 +1,16 @@
+## DevTools Configuration
+
+- network tab
+- disable cache
+- filter vite
+- invert
+- JS
+- response from network request matches serialized JavaScript in the HTML
+
+## Qwik Deployed Demo
+
+- https://qwik-dream-demo.pages.dev
+
 # Qwik qwik-conference-app ⚡️
 
 - File based routing and MDX support
@@ -12,7 +25,7 @@
 During development, the index.html is not a result of server-side rendering, but rather the Qwik app is built using client-side JavaScript only. This is ideal for development with Vite and its ability to reload modules quickly and on-demand. However, this mode is only for development and does not showcase "how" Qwik works since JavaScript is required to execute, and Vite imports many development modules for the app to work.
 
 ```
-yarn dev
+pnpm dev
 ```
 
 ### Server-side Rendering (SSR) and Client
@@ -20,7 +33,7 @@ yarn dev
 Server-side rendered index.html, with client-side modules prefetched and loaded by the browser. This can be used to test out server-side rendered content during development, but will be slower than the client-only development builds.
 
 ```
-yarn dev.ssr
+pnpm dev.ssr
 ```
 
 ## Production Builds
@@ -28,7 +41,7 @@ yarn dev.ssr
 A production build should generate the client and server modules by running both client and server build commands.
 
 ```
-yarn build
+pnpm build
 ```
 
 ### Client Modules
@@ -36,7 +49,7 @@ yarn build
 Production build that creates only the client-side modules that are dynamically imported by the browser.
 
 ```
-yarn build.client
+pnpm build.client
 ```
 
 ### Server Modules
@@ -44,7 +57,7 @@ yarn build.client
 Production build that creates the server-side render (SSR) module that is used by the server to render the HTML.
 
 ```
-yarn build.ssr
+pnpm build.ssr
 ```
 
 ## Express Server
@@ -52,7 +65,7 @@ yarn build.ssr
 This app has a minimal [Express server](https://expressjs.com/) implementation. After running a full build, you can preview the build using the command:
 
 ```
-yarn serve
+pnpm serve
 ```
 
 Then visit [http://localhost:8080/](http://localhost:8080/)
@@ -75,7 +88,7 @@ Then visit [http://localhost:8080/](http://localhost:8080/)
 This app has a minimal [Express server](https://expressjs.com/) implementation. After running a full build, you can preview the build using the command:
 
 ```
-yarn serve
+pnpm serve
 ```
 
 Then visit [http://localhost:8080/](http://localhost:8080/)
@@ -85,7 +98,7 @@ Then visit [http://localhost:8080/](http://localhost:8080/)
 This app has a minimal [Express server](https://expressjs.com/) implementation. After running a full build, you can preview the build using the command:
 
 ```
-npm run serve
+pnpm run serve
 ```
 
 Then visit [http://localhost:8080/](http://localhost:8080/)

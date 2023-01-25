@@ -13,7 +13,7 @@ export default component$(() => {
   const loc = useLocation();
 
   const stories = useResource$<Result>(async ({ track }) => {
-    const params = track(loc, "params");
+    const params = track(() => loc.params);
     const { type } = params;
     const page = parseInt(loc.query.page ?? "0", 10);
     const stories = await getStories(type as any, page);
