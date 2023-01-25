@@ -1,11 +1,11 @@
 ## DevTools Configuration
 
-- network tab
-- disable cache
-- filter vite
-- invert
-- JS
-- response from network request matches serialized JavaScript in the HTML
+- go to network tab
+- check the 'disable cache' checkbox
+- write vite in the filter input field
+- check the 'invert' checkbox
+- check the 'JS' checkbox
+- see response from network request matches serialized JavaScript in the HTML
 
 ## Qwik Deployed Demo
 
