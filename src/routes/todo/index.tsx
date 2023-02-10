@@ -10,7 +10,7 @@ import {
   useSignal,
   useStore,
   useStyles$,
-  useWatch$,
+  useTask$,
 } from "@builder.io/qwik";
 import styles from "./index.css?inline";
 
@@ -177,7 +177,7 @@ export const Item = component$((props: ItemProps) => {
   const editInput = useSignal<HTMLInputElement>();
   const todos = useContext(TODOS);
 
-  useWatch$(({ track }) => {
+  useTask$(({ track }) => {
     const current = track(() => editInput.value);
     if (current) {
       current.focus();
