@@ -1,3 +1,5 @@
+/// <reference types="vitest" />
+/// <reference types="vite/client" />
 import { defineConfig } from "vite";
 import { qwikVite } from "@builder.io/qwik/optimizer";
 import { qwikCity } from "@builder.io/qwik-city/vite";
@@ -10,6 +12,14 @@ export default defineConfig(() => {
       qwikVite(),
       tsconfigPaths()
     ],
+    test: {
+      include: ['src/**/*.{test,spec}.{js,ts,tsx}'],
+      exclude: ['src/tests'],
+      globals: true,
+      environment: 'jsdom',
+      setupFiles: 'src/setupTests.ts',
+      reporters: 'verbose',
+    },
     preview: {
       headers: {
         'Cache-Control': 'public, max-age=600',
