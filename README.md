@@ -1,5 +1,6 @@
 ## DevTools Configuration
-- run pnpm start
+
+- run ppnpm start
 - go to network tab
 - check the 'disable cache' checkbox
 - write vite in the filter input field
@@ -11,94 +12,68 @@
 
 - https://qwik-dream-demo.pages.dev
 
-# Qwik qwik-conference-app ⚡️
+# Qwik City App ⚡️
 
-- File based routing and MDX support
-- Vite.js tooling.
-- Express.js server.
-- Prettier code formatter.
-
-## Development Builds
-
-### Client only
-
-During development, the index.html is not a result of server-side rendering, but rather the Qwik app is built using client-side JavaScript only. This is ideal for development with Vite and its ability to reload modules quickly and on-demand. However, this mode is only for development and does not showcase "how" Qwik works since JavaScript is required to execute, and Vite imports many development modules for the app to work.
-
-```
-pnpm dev
-```
-
-### Server-side Rendering (SSR) and Client
-
-Server-side rendered index.html, with client-side modules prefetched and loaded by the browser. This can be used to test out server-side rendered content during development, but will be slower than the client-only development builds.
-
-```
-pnpm dev.ssr
-```
-
-## Production Builds
-
-A production build should generate the client and server modules by running both client and server build commands.
-
-```
-pnpm build
-```
-
-### Client Modules
-
-Production build that creates only the client-side modules that are dynamically imported by the browser.
-
-```
-pnpm build.client
-```
-
-### Server Modules
-
-Production build that creates the server-side render (SSR) module that is used by the server to render the HTML.
-
-```
-pnpm build.ssr
-```
-
-## Express Server
-
-This app has a minimal [Express server](https://expressjs.com/) implementation. After running a full build, you can preview the build using the command:
-
-```
-pnpm serve
-```
-
-Then visit [http://localhost:8080/](http://localhost:8080/)
+- [Qwik Docs](https://qwik.builder.io/)
+- [Discord](https://qwik.builder.io/chat)
+- [Qwik GitHub](https://github.com/BuilderIO/qwik)
+- [@QwikDev](https://twitter.com/QwikDev)
+- [Vite](https://vitejs.dev/)
 
 ---
 
-## Related
+## Project Structure
 
-- [Qwik Docs](https://qwik.builder.io/)
-- [Qwik Github](https://github.com/BuilderIO/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Discord](https://qwik.builder.io/chat)
-- [Vite](https://vitejs.dev/)
-- [Partytown](https://partytown.builder.io/)
-- [Mitosis](https://github.com/BuilderIO/mitosis)
-- [Builder.io](https://www.builder.io/)
+This project is using Qwik with [QwikCity](https://qwik.builder.io/qwikcity/overview/). QwikCity is just a extra set of tools on top of Qwik to make it easier to build a full site, including directory-based routing, layouts, and more.
 
-## Express Server
-
-This app has a minimal [Express server](https://expressjs.com/) implementation. After running a full build, you can preview the build using the command:
+Inside your project, you'll see the following directory structure:
 
 ```
-pnpm serve
+├── public/
+│   └── ...
+└── src/
+    ├── components/
+    │   └── ...
+    └── routes/
+        └── ...
 ```
 
-Then visit [http://localhost:8080/](http://localhost:8080/)
+- `src/routes`: Provides the directory based routing, which can include a hierarchy of `layout.tsx` layout files, and an `index.tsx` file as the page. Additionally, `index.ts` files are endpoints. Please see the [routing docs](https://qwik.builder.io/qwikcity/routing/overview/) for more info.
 
-## Express Server
+- `src/components`: Recommended directory for components.
 
-This app has a minimal [Express server](https://expressjs.com/) implementation. After running a full build, you can preview the build using the command:
+- `public`: Any static assets, like images, can be placed in the public directory. Please see the [Vite public directory](https://vitejs.dev/guide/assets.html#the-public-directory) for more info.
 
+## Add Integrations and deployment
+
+Use the `pnpm run qwik add` command to add additional integrations. Some examples of integrations include: Cloudflare, Netlify or Express server, and the [Static Site Generator (SSG)](https://qwik.builder.io/qwikcity/guides/static-site-generation/).
+
+```shell
+pnpm run qwik add # or `yarn qwik add`
 ```
-pnpm run serve
+
+## Development
+
+Development mode uses [Vite's development server](https://vitejs.dev/). During development, the `dev` command will server-side render (SSR) the output.
+
+```shell
+pnpm start # or `yarn start`
 ```
 
-Then visit [http://localhost:8080/](http://localhost:8080/)
+> Note: during dev mode, Vite may request a significant number of `.js` files. This does not represent a Qwik production build.
+
+## Preview
+
+The preview command will create a production build of the client modules, a production build of `src/entry.preview.tsx`, and run a local server. The preview server is only for convenience to locally preview a production build, and it should not be used as a production server.
+
+```shell
+pnpm run preview # or `yarn preview`
+```
+
+## Production
+
+The production build will generate client and server modules by running both client and server build commands. Additionally, the build command will use Typescript to run a type check on the source code.
+
+```shell
+pnpm run build # or `yarn build`
+```

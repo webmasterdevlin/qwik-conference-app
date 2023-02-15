@@ -15,7 +15,7 @@ export default component$(() => {
   const stories = useResource$<Result>(async ({ track }) => {
     const params = track(() => loc.params);
     const { type } = params;
-    const page = parseInt(loc.query.page ?? "0", 10);
+    const page = parseInt(loc.params.page ?? "0", 10);
     const stories = await getStories(type as any, page);
     return {
       stories,

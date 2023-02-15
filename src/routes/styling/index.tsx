@@ -13,8 +13,8 @@ export default component$(() => {
       <button onClick$={() => store.siblings.push(0)}>addSibling</button>
       {JSON.stringify(store)}
       {store.open ? <Child key="child" /> : null}
-      {store.siblings.map(() => (
-        <Sibling />
+      {store.siblings.map((s, i) => (
+        <Sibling key={i} />
       ))}
     </div>
   );

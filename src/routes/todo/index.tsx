@@ -4,7 +4,7 @@
 
 import {
   component$,
-  createContext,
+  createContextId,
   useContext,
   useContextProvider,
   useSignal,
@@ -14,7 +14,7 @@ import {
 } from "@builder.io/qwik";
 import styles from "./index.css?inline";
 
-export const TODOS = createContext<Todos>("TodoApp");
+export const TODOS = createContextId<Todos>("TodoApp");
 
 export interface TodoItem {
   completed: boolean;
@@ -66,8 +66,8 @@ export const Body = component$(() => {
   return (
     <div class="main">
       <ul class="todo-list">
-        {todos.items.filter(FILTERS[todos.filter]).map((key) => (
-          <Item item={key} key={key.title} />
+        {todos.items.filter(FILTERS[todos.filter]).map((key, index) => (
+          <Item item={key} key={key.title + index} />
         ))}
       </ul>
     </div>
@@ -85,7 +85,7 @@ export const Footer = component$(() => {
    */
   const todos = useContext(TODOS);
 
-  function Filter({ filter }: { filter: FilterStates }) {
+  function Filter({ filter }: { filter: FilterStates; key?: any }) {
     const lMode = filter.toLowerCase();
     return (
       <li>
@@ -110,8 +110,8 @@ export const Footer = component$(() => {
             {remaining == 1 ? " item" : " items"} left
           </span>
           <ul class="filters">
-            {FilterStates.map((f) => (
-              <Filter filter={f} />
+            {FilterStates.map((f, i) => (
+              <Filter key={i} filter={f} />
             ))}
           </ul>
           {remaining > 0 ? (

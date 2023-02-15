@@ -2,14 +2,14 @@ import {
   component$,
   useStore,
   useStyles$,
-  useClientEffect$,
+  useBrowserVisibleTask$,
 } from "@builder.io/qwik";
 import styles from "./clock.css?inline";
 
 export default component$(() => {
   const items = new Array(60).fill(null).map((_, index) => "item " + index);
 
-  console.log('PARENT');
+  console.log("PARENT");
   return (
     <div>
       <p onClick$={() => console.log("test")}>
@@ -41,7 +41,7 @@ export const Clock = component$(() => {
     second: {},
   });
 
-  useClientEffect$(() => {
+  useBrowserVisibleTask$(() => {
     const getStyle = (deg: number) => ({ transform: `rotate(${deg}deg)` });
     const update = () => {
       const now = new Date();
@@ -53,7 +53,6 @@ export const Clock = component$(() => {
     const tmrId = setInterval(update, 1000);
     return () => clearInterval(tmrId);
   });
-  debugger;
 
   console.log("Render Clock");
   return (

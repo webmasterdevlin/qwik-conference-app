@@ -47,7 +47,7 @@ export const Cmp = component$((props: { text: string; delay: number }) => {
   return (
     <Resource
       value={resource}
-      onPending={() => <div className="cmp">Loading...</div>}
+      onPending={() => <div class="cmp">Loading...</div>}
       onResolved={(value) => <div class="cmp">{value}</div>}
     />
   );
