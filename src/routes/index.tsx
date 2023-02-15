@@ -97,6 +97,13 @@ export default component$(() => {
             </td>
             <td>All together</td>
           </tr>
+          <tr>
+            <td>🎨</td>
+            <td>
+              <a href="/tailwind">Tailwind CSS</a>
+            </td>
+            <td>Tailwind sample</td>
+          </tr>
         </tbody>
       </table>
     </div>
