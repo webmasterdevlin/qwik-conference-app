@@ -1,5 +1,5 @@
 import { component$, SSRStream } from "@builder.io/qwik";
-import { Readable } from "stream";
+import type { Readable } from "stream";
 
 export const RemoteApp = component$(({ name }: { name: string }) => {
   const path = `https://qwik-multi-worker-${name}.devdash.workers.dev`;

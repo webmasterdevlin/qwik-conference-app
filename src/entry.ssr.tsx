@@ -1,4 +1,5 @@
-import { renderToStream, RenderToStreamOptions } from "@builder.io/qwik/server";
+import type { RenderToStreamOptions } from "@builder.io/qwik/server";
+import { renderToStream } from "@builder.io/qwik/server";
 import { manifest } from "@qwik-client-manifest";
 import Root from "./root";
 
@@ -13,7 +14,7 @@ export default function (opts: RenderToStreamOptions) {
       implementation: {
         linkInsert: null,
         workerFetchInsert: null,
-        prefetchEvent: 'always',
+        prefetchEvent: "always",
       },
     },
   });

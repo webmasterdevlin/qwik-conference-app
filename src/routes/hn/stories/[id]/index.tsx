@@ -2,7 +2,7 @@ import { component$, Resource, useResource$ } from "@builder.io/qwik";
 import { useLocation } from "@builder.io/qwik-city";
 import { getStory } from "../../api";
 import { Comment } from "../../components";
-import { IStory } from "../../types";
+import type { IStory } from "../../types";
 
 export default component$(() => {
   const loc = useLocation();

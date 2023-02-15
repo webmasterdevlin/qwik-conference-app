@@ -2,7 +2,7 @@ import { component$, Resource, useResource$ } from "@builder.io/qwik";
 import { useLocation } from "@builder.io/qwik-city";
 import { getStories } from "../api";
 import { StoryPreview } from "../components";
-import { IStory } from "../types";
+import type { IStory } from "../types";
 
 interface Result {
   stories: IStory[];

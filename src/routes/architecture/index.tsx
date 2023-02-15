@@ -1,5 +1,6 @@
 import { component$, useStore } from "@builder.io/qwik";
-import { ArchExamples, Cmp } from "./architecture";
+import type { Cmp } from "./architecture";
+import { ArchExamples } from "./architecture";
 /* eslint no-console: ["off"] */
 
 export default component$(() => {
