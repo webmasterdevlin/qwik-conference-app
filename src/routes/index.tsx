@@ -2,7 +2,8 @@ import { component$ } from "@builder.io/qwik";
 
 export default component$(() => {
   return (
-    <div>
+    <div class="container mx-auto p-4">
+      <h1>Qwik City - Resumable app</h1>
       <table>
         <tbody>
           <tr>
