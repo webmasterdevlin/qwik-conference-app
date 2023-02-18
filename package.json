@@ -58,6 +58,7 @@
     "@vitest/coverage-c8": "^0.28.5",
     "@vitest/ui": "^0.28.5",
     "autoprefixer": "^10.4.13",
+    "axios": "^1.3.3",
     "compression": "^1.7.4",
     "eslint": "8.34.0",
     "eslint-plugin-qwik": "0.18.1",

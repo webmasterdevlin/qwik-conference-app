@@ -105,6 +105,13 @@ export default component$(() => {
             </td>
             <td>Tailwind sample</td>
           </tr>
+          <tr>
+            <td>📰</td>
+            <td>
+              <a href="/post">Post</a>
+            </td>
+            <td>Loader function demo</td>
+          </tr>
         </tbody>
       </table>
     </div>
