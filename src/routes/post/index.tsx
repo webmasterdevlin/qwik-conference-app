@@ -29,7 +29,7 @@ export default component$(() => {
   return (
     <div class="container mx-auto">
       <h1>Posts of the day</h1>
-      <ol>
+      <ol class="list-decimal">
         {posts.value?.map((p) => {
           return <li key={p.id}>{p.title}</li>;
         })}
