@@ -112,6 +112,13 @@ export default component$(() => {
             </td>
             <td>Loader function demo</td>
           </tr>
+          <tr>
+            <td>🔐</td>
+            <td>
+              <a href="/admin">Post</a>
+            </td>
+            <td>Unauthenticated admin redirecting to auth page demo</td>
+          </tr>
         </tbody>
       </table>
     </div>
