@@ -1,4 +1,4 @@
-import { component$, useBrowserVisibleTask$ } from "@builder.io/qwik";
+import { component$, useVisibleTask$ } from "@builder.io/qwik";
 import { useNavigate } from "@builder.io/qwik-city";
 import useAuth from "~/hooks/useAuth";
 
@@ -6,7 +6,7 @@ export default component$(() => {
   const nav = useNavigate();
   const { user } = useAuth();
 
-  useBrowserVisibleTask$(() => {
+  useVisibleTask$(() => {
     if (!user.value.employee) {
       nav("/auth");
     }

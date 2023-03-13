@@ -2,7 +2,7 @@ import {
   component$,
   useStore,
   useStyles$,
-  useBrowserVisibleTask$,
+  useVisibleTask$,
 } from "@builder.io/qwik";
 import styles from "./clock.css?inline";
 
@@ -41,7 +41,7 @@ export const Clock = component$(() => {
     second: {},
   });
 
-  useBrowserVisibleTask$(() => {
+  useVisibleTask$(() => {
     const getStyle = (deg: number) => ({ transform: `rotate(${deg}deg)` });
     const update = () => {
       const now = new Date();

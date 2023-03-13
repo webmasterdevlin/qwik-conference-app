@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import { loader$ } from "@builder.io/qwik-city";
+import { routeLoader$ } from "@builder.io/qwik-city";
 import axios from "axios";
 
 interface IPost {
@@ -9,7 +9,7 @@ interface IPost {
   body: string;
 }
 
-export const usePostLoader = loader$(async () => {
+export const usePostLoader = routeLoader$(async () => {
   // this could be sending an HTTP request to a microservice for example
   const { data } = await axios.get<IPost[]>(
     "https://jsonplaceholder.typicode.com/todos"

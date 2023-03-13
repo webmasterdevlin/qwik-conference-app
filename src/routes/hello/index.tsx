@@ -1,8 +1,8 @@
-import { component$, useBrowserVisibleTask$ } from "@builder.io/qwik";
+import { component$, useVisibleTask$ } from "@builder.io/qwik";
 
 export default component$(() => {
   // client side only. The rest runs on the server
-  useBrowserVisibleTask$(() => {
+  useVisibleTask$(() => {
     alert("Hello from Qwik!");
   });
 
