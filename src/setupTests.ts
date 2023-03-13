@@ -2,28 +2,19 @@
 // allows you to do things like:
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
-import '@testing-library/jest-dom';
-import matchers from '@testing-library/jest-dom/matchers';
-import { expect, beforeAll, afterEach, afterAll } from 'vitest';
-
-// replace fetch with cross-fetch
-global.fetch = fetch;
+import "@testing-library/jest-dom";
+import matchers from "@testing-library/jest-dom/matchers";
+import { expect, beforeAll, afterEach, afterAll } from "vitest";
 
 // extends Vitest's expect method with methods from react-testing-library
 expect.extend(matchers);
 
 // Establish API mocking before all tests.
-beforeAll(() => {
-  
-});
+beforeAll(() => {});
 
 // Reset any request handlers that we may add during the tests,
 // so they don't affect other tests.
-afterEach(() => {
-
-});
+afterEach(() => {});
 
 // Clean up after the tests are finished.
-afterAll(() => {
-
-});
+afterAll(() => {});
