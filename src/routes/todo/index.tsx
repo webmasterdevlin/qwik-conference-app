@@ -48,7 +48,6 @@ export default component$(() => {
         { completed: false, title: "Profit" },
       ],
     },
-    { recursive: true }
   );
   useContextProvider(TODOS, todos);
 
