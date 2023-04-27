@@ -1,7 +1,7 @@
 import { component$, Resource, useResource$ } from "@builder.io/qwik";
 import { useLocation } from "@builder.io/qwik-city";
 import { getUser } from "../../api";
-import { IUser } from "../../types";
+import type { IUser } from "../../types";
 
 export default component$(() => {
   const loc = useLocation();

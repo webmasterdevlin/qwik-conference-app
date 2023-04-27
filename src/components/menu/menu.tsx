@@ -16,7 +16,7 @@ export const Menu = component$(() => {
               <h5>{item.text}</h5>
               <ul>
                 {item.items?.map((item) => (
-                  <li>
+                  <li key={item.text}>
                     <Link
                       href={item.href}
                       class={{

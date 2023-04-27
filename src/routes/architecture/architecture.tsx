@@ -153,7 +153,7 @@ export const MonolithScrubber = component$((props: { cmp: Cmp }) => {
 });
 
 export const LazyScrubber = component$((props: { cmp: Cmp }) => {
-  const store = useStore({ step: 1 }, { recursive: true });
+  const store = useStore({ step: 1 });
   return (
     <>
       <ol>

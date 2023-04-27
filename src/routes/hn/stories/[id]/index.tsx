@@ -39,7 +39,7 @@ export default component$(() => {
                 </p>
                 <ul class="comment-children">
                   {story.comments.map((comment) => (
-                    <Comment comment={comment} />
+                    <Comment comment={comment} key={comment.id} />
                   ))}
                 </ul>
               </div>

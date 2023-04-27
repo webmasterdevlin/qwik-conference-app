@@ -23,7 +23,7 @@ export default component$(() => {
 
       <ul>
         {items.map((i) => (
-          <li>{i}</li>
+          <li key={i}>{i}</li>
         ))}
       </ul>
 

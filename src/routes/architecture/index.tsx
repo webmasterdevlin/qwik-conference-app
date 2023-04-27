@@ -11,7 +11,6 @@ export default component$(() => {
       islands: createApp(),
       resumables: createApp(),
     },
-    { recursive: true }
   );
   return (
     <ArchExamples

@@ -64,7 +64,7 @@ export default component$(() => {
                 {stories && (
                   <ul>
                     {stories.map((story: IStory) => (
-                      <StoryPreview story={story} />
+                      <StoryPreview story={story} key={story.id} />
                     ))}
                   </ul>
                 )}
